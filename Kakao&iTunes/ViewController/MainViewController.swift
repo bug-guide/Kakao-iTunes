@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Kakao&iTunes
 //
 //  Created by NC0201024 on 2018. 5. 25..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

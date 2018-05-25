@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BE9FCACDE42D7CB8134032B /* Pods_Kakao_iTunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17330B97E73D95588A1A0314 /* Pods_Kakao_iTunes.framework */; };
 		C433516E20B79E7400B32EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433516D20B79E7400B32EB1 /* AppDelegate.swift */; };
-		C433517020B79E7400B32EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433516F20B79E7400B32EB1 /* ViewController.swift */; };
 		C433517320B79E7400B32EB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433517120B79E7400B32EB1 /* Main.storyboard */; };
 		C433517620B79E7400B32EB1 /* Kakao_iTunes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C433517420B79E7400B32EB1 /* Kakao_iTunes.xcdatamodeld */; };
 		C433517820B79E7500B32EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C433517720B79E7500B32EB1 /* Assets.xcassets */; };
 		C433517B20B79E7500B32EB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C433517920B79E7500B32EB1 /* LaunchScreen.storyboard */; };
+		C433518420B7CAF200B32EB1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433518320B7CAF200B32EB1 /* MainViewController.swift */; };
+		C433518620B7CB5A00B32EB1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433518520B7CB5A00B32EB1 /* BaseViewController.swift */; };
+		C433518D20B7DC2F00B32EB1 /* NetworkPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433518B20B7DC2F00B32EB1 /* NetworkPopup.swift */; };
+		C433518E20B7DC2F00B32EB1 /* NetworkPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C433518C20B7DC2F00B32EB1 /* NetworkPopup.xib */; };
+		C433519020B7DC9300B32EB1 /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433518F20B7DC9300B32EB1 /* AppDataManager.swift */; };
+		C433519220B7DE3300B32EB1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433519120B7DE3300B32EB1 /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17330B97E73D95588A1A0314 /* Pods_Kakao_iTunes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kakao_iTunes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0A9D1475D8AEB91EFAF4C17 /* Pods-Kakao&iTunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kakao&iTunes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes.debug.xcconfig"; sourceTree = "<group>"; };
+		BCEAF06E18895EC2568D1E08 /* Pods-Kakao&iTunes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kakao&iTunes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes.release.xcconfig"; sourceTree = "<group>"; };
 		C433516A20B79E7400B32EB1 /* Kakao&iTunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kakao&iTunes.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C433516D20B79E7400B32EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C433516F20B79E7400B32EB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C433517220B79E7400B32EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C433517520B79E7400B32EB1 /* Kakao_iTunes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kakao_iTunes.xcdatamodel; sourceTree = "<group>"; };
 		C433517720B79E7500B32EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C433517A20B79E7500B32EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C433517C20B79E7500B32EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C433518320B7CAF200B32EB1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C433518520B7CB5A00B32EB1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C433518B20B7DC2F00B32EB1 /* NetworkPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkPopup.swift; sourceTree = "<group>"; };
+		C433518C20B7DC2F00B32EB1 /* NetworkPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NetworkPopup.xib; sourceTree = "<group>"; };
+		C433518F20B7DC9300B32EB1 /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
+		C433519120B7DE3300B32EB1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BE9FCACDE42D7CB8134032B /* Pods_Kakao_iTunes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7899E5492EC100331364849F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				17330B97E73D95588A1A0314 /* Pods_Kakao_iTunes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A6B071E5CAC12A71185507E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A0A9D1475D8AEB91EFAF4C17 /* Pods-Kakao&iTunes.debug.xcconfig */,
+				BCEAF06E18895EC2568D1E08 /* Pods-Kakao&iTunes.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C433516120B79E7400B32EB1 = {
 			isa = PBXGroup;
 			children = (
 				C433516C20B79E7400B32EB1 /* Kakao&iTunes */,
 				C433516B20B79E7400B32EB1 /* Products */,
+				A6B071E5CAC12A71185507E7 /* Pods */,
+				7899E5492EC100331364849F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +90,11 @@
 		C433516C20B79E7400B32EB1 /* Kakao&iTunes */ = {
 			isa = PBXGroup;
 			children = (
+				C433518920B7DC2F00B32EB1 /* CustomView */,
+				C433518820B7CB9000B32EB1 /* Data */,
+				C433518720B7CB7500B32EB1 /* Manager */,
+				C433518220B7CAF200B32EB1 /* ViewController */,
 				C433516D20B79E7400B32EB1 /* AppDelegate.swift */,
-				C433516F20B79E7400B32EB1 /* ViewController.swift */,
 				C433517120B79E7400B32EB1 /* Main.storyboard */,
 				C433517720B79E7500B32EB1 /* Assets.xcassets */,
 				C433517920B79E7500B32EB1 /* LaunchScreen.storyboard */,
@@ -67,6 +104,48 @@
 			path = "Kakao&iTunes";
 			sourceTree = "<group>";
 		};
+		C433518220B7CAF200B32EB1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C433518520B7CB5A00B32EB1 /* BaseViewController.swift */,
+				C433519120B7DE3300B32EB1 /* SplashViewController.swift */,
+				C433518320B7CAF200B32EB1 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C433518720B7CB7500B32EB1 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C433518F20B7DC9300B32EB1 /* AppDataManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C433518820B7CB9000B32EB1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C433518920B7DC2F00B32EB1 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				C433518A20B7DC2F00B32EB1 /* NetworkPopup */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		C433518A20B7DC2F00B32EB1 /* NetworkPopup */ = {
+			isa = PBXGroup;
+			children = (
+				C433518B20B7DC2F00B32EB1 /* NetworkPopup.swift */,
+				C433518C20B7DC2F00B32EB1 /* NetworkPopup.xib */,
+			);
+			path = NetworkPopup;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +153,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C433517F20B79E7500B32EB1 /* Build configuration list for PBXNativeTarget "Kakao&iTunes" */;
 			buildPhases = (
+				B3477149060762C0613B2FB6 /* [CP] Check Pods Manifest.lock */,
 				C433516620B79E7400B32EB1 /* Sources */,
 				C433516720B79E7400B32EB1 /* Frameworks */,
 				C433516820B79E7400B32EB1 /* Resources */,
+				07AD12D6A6C8BA05DE4B0046 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,19 +209,65 @@
 				C433517B20B79E7500B32EB1 /* LaunchScreen.storyboard in Resources */,
 				C433517820B79E7500B32EB1 /* Assets.xcassets in Resources */,
 				C433517320B79E7400B32EB1 /* Main.storyboard in Resources */,
+				C433518E20B7DC2F00B32EB1 /* NetworkPopup.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07AD12D6A6C8BA05DE4B0046 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3477149060762C0613B2FB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kakao&iTunes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C433516620B79E7400B32EB1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C433517020B79E7400B32EB1 /* ViewController.swift in Sources */,
 				C433516E20B79E7400B32EB1 /* AppDelegate.swift in Sources */,
+				C433518620B7CB5A00B32EB1 /* BaseViewController.swift in Sources */,
+				C433518D20B7DC2F00B32EB1 /* NetworkPopup.swift in Sources */,
+				C433518420B7CAF200B32EB1 /* MainViewController.swift in Sources */,
 				C433517620B79E7400B32EB1 /* Kakao_iTunes.xcdatamodeld in Sources */,
+				C433519220B7DE3300B32EB1 /* SplashViewController.swift in Sources */,
+				C433519020B7DC9300B32EB1 /* AppDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +409,7 @@
 		};
 		C433518020B79E7500B32EB1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0A9D1475D8AEB91EFAF4C17 /* Pods-Kakao&iTunes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +428,7 @@
 		};
 		C433518120B79E7500B32EB1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCEAF06E18895EC2568D1E08 /* Pods-Kakao&iTunes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
