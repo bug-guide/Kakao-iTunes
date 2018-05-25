@@ -30,11 +30,56 @@ class AppDataManager: NSObject {
     
     let SCHMA:String = "https://"
     let HOST:String = "itunes.apple.com"
-    let URL_TOP_FREE = "/kr/rss/topfreeapplications/limit=50/genre=6015/json"
+    let URL_TOP_FREE:String = "/kr/rss/topfreeapplications/limit=50/genre=6015/json"
+    var URL_LOOKUP_APPID:String = ""
+    var URL_LOOKUP_APP:String {
+        get {
+            return "/lookup?id=\(URL_LOOKUP_APPID)&country=kr"
+        }
+    }
     
     func requestTopFreeApp()
     {
         let urlStr = SCHMA + HOST + URL_TOP_FREE
+        guard let url = URL.init(string: urlStr) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            guard let httpRes = response as? HTTPURLResponse, httpRes.statusCode == 200 else {
+                return
+            }
+            
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            do {
+                if let jsonDic = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
+                    print(jsonDic)
+                    
+                }
+            } catch {
+                print("JSON 파상 에러")
+            }
+            
+            print("JSON 파싱 완료")
+            
+            // 메일 쓰레드에서 화면 갱신
+            DispatchQueue.main.async {
+                
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func requestLookup(_ appId:String)
+    {
+        URL_LOOKUP_APPID = appId
+        let urlStr = SCHMA + HOST + URL_LOOKUP_APP
         guard let url = URL.init(string: urlStr) else {
             return
         }
