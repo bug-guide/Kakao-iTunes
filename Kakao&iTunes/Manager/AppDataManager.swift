@@ -38,38 +38,56 @@ class AppDataManager: NSObject {
         }
     }
     
-    func requestTopFreeApp()
+    func requestTopFreeApp(complete:@escaping (_ isSuccess:Bool, _ entryData:Array<Any>?)->Void)
     {
         let urlStr = SCHMA + HOST + URL_TOP_FREE
         guard let url = URL.init(string: urlStr) else {
+            complete(false, nil)
             return
         }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
+            var isSuccess:Bool = false
+            var entryData:Array<Any>? = nil
+            
             guard let httpRes = response as? HTTPURLResponse, httpRes.statusCode == 200 else {
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
                 return
             }
             
             if let error = error {
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
                 return
             }
             
             do {
                 if let jsonDic = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
-                    print(jsonDic)
+                    //print(jsonDic)
                     
+                    isSuccess = true
+                    if let feed = jsonDic["feed"] {
+                        if let entry = feed["entry"] as? Array<Any> {
+                            entryData = entry
+                        }
+                    }
                 }
             } catch {
                 print("JSON 파상 에러")
+                isSuccess = false
             }
             
             print("JSON 파싱 완료")
             
             // 메일 쓰레드에서 화면 갱신
             DispatchQueue.main.async {
-                
+                complete(isSuccess, entryData)
+                return
             }
         }
         

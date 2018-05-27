@@ -20,6 +20,8 @@
 		C433519020B7DC9300B32EB1 /* AppDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433518F20B7DC9300B32EB1 /* AppDataManager.swift */; };
 		C433519220B7DE3300B32EB1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433519120B7DE3300B32EB1 /* SplashViewController.swift */; };
 		C433519420B7FF8A00B32EB1 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C433519320B7FF8A00B32EB1 /* ImageCacheManager.swift */; };
+		C459640120BAA768005598C9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459640020BAA768005598C9 /* DetailViewController.swift */; };
+		C459640320BAB3B9005598C9 /* ApplicationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459640220BAB3B9005598C9 /* ApplicationData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		C433518F20B7DC9300B32EB1 /* AppDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataManager.swift; sourceTree = "<group>"; };
 		C433519120B7DE3300B32EB1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		C433519320B7FF8A00B32EB1 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		C459640020BAA768005598C9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C459640220BAB3B9005598C9 /* ApplicationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 				C433518520B7CB5A00B32EB1 /* BaseViewController.swift */,
 				C433519120B7DE3300B32EB1 /* SplashViewController.swift */,
 				C433518320B7CAF200B32EB1 /* MainViewController.swift */,
+				C459640020BAA768005598C9 /* DetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 		C433518820B7CB9000B32EB1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				C459640220BAB3B9005598C9 /* ApplicationData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C459640320BAB3B9005598C9 /* ApplicationData.swift in Sources */,
+				C459640120BAA768005598C9 /* DetailViewController.swift in Sources */,
 				C433516E20B79E7400B32EB1 /* AppDelegate.swift in Sources */,
 				C433518620B7CB5A00B32EB1 /* BaseViewController.swift in Sources */,
 				C433518D20B7DC2F00B32EB1 /* NetworkPopup.swift in Sources */,

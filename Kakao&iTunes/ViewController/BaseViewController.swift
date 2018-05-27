@@ -13,7 +13,6 @@ class BaseViewController: UIViewController, NetworkPopupDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -36,20 +35,31 @@ class BaseViewController: UIViewController, NetworkPopupDelegate {
                 {
                     if isCellular
                     {
+                        //셀룰러 경고.
                         self.showWifiWarningPopup()
                     }
                     else
                     {
-                        SwiftSpinner.show("Getty Page\nParsing", animated: true)
-                        //AppDataManager.shared.startAppDataLoding()
+                        //진입한다.
+                        self.networkCheckComplete()
                     }
                 }
                 else
                 {
-                    self.showNetworkConnectPopup()
+                    //네트워크 연결안됨.
+                    self.showNetworkNotAbleToConnectPopup()
                 }
             })
         }
+    }
+    
+    /**
+     네트워크 연결체크 종료. checkNetwork 이후 와이파이 상태이거나, 셀룰러지만 사용자가 진입을 요청한 경우 호출된다.
+     사용시, VC에서 override 하여 사용하는것을 권장한다.
+     */
+    func networkCheckComplete()
+    {
+        print("Base VC NetworkCheckComplete")
     }
     
     // MARK: - network popup
@@ -66,8 +76,8 @@ class BaseViewController: UIViewController, NetworkPopupDelegate {
             AppDataManager.shared.connectedToNetwork { (isConnect, isCellular) in
                 if isConnect
                 {
-                    SwiftSpinner.show("Getty Page\nParsing", animated: true)
-                    //AppDataManager.shared.startAppDataLoding()
+                    //사용자가 진입요청. 이때는 와이파이를 구분하지 않고 연결상태만 확인.
+                    self.networkCheckComplete()
                 }
                 else
                 {
@@ -93,7 +103,7 @@ class BaseViewController: UIViewController, NetworkPopupDelegate {
     /**
      네트워크가 연결되어있지 않을때 사용자 알림
      */
-    func showNetworkConnectPopup()
+    func showNetworkNotAbleToConnectPopup()
     {
         let pop = NetworkPopup.instanceFromNib()
         pop.initSetting()

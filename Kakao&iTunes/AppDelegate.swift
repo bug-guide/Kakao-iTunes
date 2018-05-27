@@ -12,6 +12,14 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    ///루트뷰 변경시 사용가능한 메인 화면 분류
+    public enum RootView: Int {
+        ///초기 스플레시 화면
+        case Splash
+        /// 메인화면
+        case Main
+    }
+    
     var window: UIWindow?
 
 
@@ -85,6 +93,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
+    
+    
+    func changeRootViewController(rootView:RootView)
+    {
+        if self.window == nil
+        {
+            self.window = UIWindow.init(frame: UIScreen.main.bounds)
+        }
+        
+        var changeViewController:UIViewController?
+        if rootView == RootView.Splash
+        {
+            let splash:SplashViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
+            changeViewController = splash
+            
+        }
+        else if rootView == RootView.Main
+        {
+            let mainNavi:UINavigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainNavigation") as! UINavigationController
+            changeViewController = mainNavi
+        }
+        else
+        {
+            print("changeRootViewController ????????")
+            return
+        }
+        
+        if self.window!.rootViewController == nil
+        {
+            //현재 루트뷰가 없으면 그냥 세팅.
+            self.window?.rootViewController = changeViewController!
+            self.window?.makeKeyAndVisible()
+        }
+        else
+        {
+            //있으면 에니메이션 교환
+            UIView.transition(with: self.window!, duration: 0.3, options: .transitionFlipFromLeft, animations: {
+                self.window?.rootViewController = changeViewController!
+            }) { (complete) in
+                self.window?.makeKeyAndVisible()
             }
         }
     }
