@@ -8,12 +8,16 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let hCell = UINib.init(nibName: "HeadInfoCell", bundle: nil)
+        tableView.register(hCell, forCellReuseIdentifier: "HeadInfoCell")
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +25,26 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: - table
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeadInfoCell") as? HeadInfoCell else {
+            return DetailCell.init().getCellH()
+        }
+        
+        return cell.getCellH()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HeadInfoCell") as? HeadInfoCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
 
 }

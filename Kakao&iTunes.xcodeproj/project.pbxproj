@@ -25,6 +25,9 @@
 		C487E98520BB8F7600469AC4 /* ExpandableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E98320BB8F7600469AC4 /* ExpandableCell.swift */; };
 		C487E98620BB8F7600469AC4 /* ExpandableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C487E98420BB8F7600469AC4 /* ExpandableCell.xib */; };
 		C487E98820BBAC8000469AC4 /* UrlTagImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E98720BBAC8000469AC4 /* UrlTagImageView.swift */; };
+		C487E99120BBE32200469AC4 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E99020BBE32200469AC4 /* DetailCell.swift */; };
+		C487E99820BBE8E000469AC4 /* HeadInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E99620BBE8E000469AC4 /* HeadInfoCell.swift */; };
+		C487E99920BBE8E000469AC4 /* HeadInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		C487E98320BB8F7600469AC4 /* ExpandableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableCell.swift; sourceTree = "<group>"; };
 		C487E98420BB8F7600469AC4 /* ExpandableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandableCell.xib; sourceTree = "<group>"; };
 		C487E98720BBAC8000469AC4 /* UrlTagImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlTagImageView.swift; sourceTree = "<group>"; };
+		C487E99020BBE32200469AC4 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		C487E99620BBE8E000469AC4 /* HeadInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadInfoCell.swift; sourceTree = "<group>"; };
+		C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadInfoCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 		C433518920B7DC2F00B32EB1 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				C487E98920BBE31000469AC4 /* DetailViewCell */,
 				C487E98220BB8F6A00469AC4 /* ExpandableCell */,
 				C433518A20B7DC2F00B32EB1 /* NetworkPopup */,
 				C487E98720BBAC8000469AC4 /* UrlTagImageView.swift */,
@@ -170,6 +177,64 @@
 				C487E98420BB8F7600469AC4 /* ExpandableCell.xib */,
 			);
 			path = ExpandableCell;
+			sourceTree = "<group>";
+		};
+		C487E98920BBE31000469AC4 /* DetailViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C487E98A20BBE31000469AC4 /* TotalReviewCell */,
+				C487E98B20BBE31000469AC4 /* DescriptionCell */,
+				C487E98C20BBE31000469AC4 /* ReviewCell */,
+				C487E98D20BBE31000469AC4 /* historyTechCell */,
+				C487E98E20BBE31000469AC4 /* PreviewCell */,
+				C487E98F20BBE31000469AC4 /* HeadInfoCell */,
+				C487E99020BBE32200469AC4 /* DetailCell.swift */,
+			);
+			path = DetailViewCell;
+			sourceTree = "<group>";
+		};
+		C487E98A20BBE31000469AC4 /* TotalReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TotalReviewCell;
+			sourceTree = "<group>";
+		};
+		C487E98B20BBE31000469AC4 /* DescriptionCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DescriptionCell;
+			sourceTree = "<group>";
+		};
+		C487E98C20BBE31000469AC4 /* ReviewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ReviewCell;
+			sourceTree = "<group>";
+		};
+		C487E98D20BBE31000469AC4 /* historyTechCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = historyTechCell;
+			sourceTree = "<group>";
+		};
+		C487E98E20BBE31000469AC4 /* PreviewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PreviewCell;
+			sourceTree = "<group>";
+		};
+		C487E98F20BBE31000469AC4 /* HeadInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				C487E99620BBE8E000469AC4 /* HeadInfoCell.swift */,
+				C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */,
+			);
+			path = HeadInfoCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +302,7 @@
 				C433517320B79E7400B32EB1 /* Main.storyboard in Resources */,
 				C487E98620BB8F7600469AC4 /* ExpandableCell.xib in Resources */,
 				C433518E20B7DC2F00B32EB1 /* NetworkPopup.xib in Resources */,
+				C487E99920BBE8E000469AC4 /* HeadInfoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,11 +317,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,12 +358,14 @@
 			files = (
 				C459640320BAB3B9005598C9 /* ApplicationData.swift in Sources */,
 				C459640120BAA768005598C9 /* DetailViewController.swift in Sources */,
+				C487E99120BBE32200469AC4 /* DetailCell.swift in Sources */,
 				C433516E20B79E7400B32EB1 /* AppDelegate.swift in Sources */,
 				C433518620B7CB5A00B32EB1 /* BaseViewController.swift in Sources */,
 				C487E98520BB8F7600469AC4 /* ExpandableCell.swift in Sources */,
 				C487E98820BBAC8000469AC4 /* UrlTagImageView.swift in Sources */,
 				C433518D20B7DC2F00B32EB1 /* NetworkPopup.swift in Sources */,
 				C433518420B7CAF200B32EB1 /* MainViewController.swift in Sources */,
+				C487E99820BBE8E000469AC4 /* HeadInfoCell.swift in Sources */,
 				C433519420B7FF8A00B32EB1 /* ImageCacheManager.swift in Sources */,
 				C433517620B79E7400B32EB1 /* Kakao_iTunes.xcdatamodeld in Sources */,
 				C433519220B7DE3300B32EB1 /* SplashViewController.swift in Sources */,
@@ -447,10 +517,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3F27QB3QE;
 				INFOPLIST_FILE = "Kakao&iTunes/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nomadconnection.Kakao-iTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -466,10 +534,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G3F27QB3QE;
 				INFOPLIST_FILE = "Kakao&iTunes/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nomadconnection.Kakao-iTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

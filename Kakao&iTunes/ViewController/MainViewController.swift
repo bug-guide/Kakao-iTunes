@@ -9,7 +9,7 @@
 import UIKit
 import SwiftSpinner
 
-class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,6 +22,11 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         //expandablecell load
         let eCell = UINib.init(nibName: "ExpandableCell", bundle: nil)
         tableView.register(eCell, forCellReuseIdentifier: "ExpandableCell")
+        
+        //3d touch
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
         
         SwiftSpinner.show("TopFreeApp")
         AppDataManager.shared.requestTopFreeApp { (isSuccess, entryData) in
@@ -86,6 +91,35 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         data.isExpandMode = !data.isExpandMode
         
         tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
+    // MARK: - 3d touch preview
+    
+    //shows preview
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        print(location)
+        guard let indexPath = tableView.indexPathForRow(at: location), let cell = tableView.cellForRow(at: indexPath) else {
+            return nil
+        }
+        print(indexPath)
+        
+        guard let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else {
+            return nil
+        }
+        
+        let previewH = UIScreen.main.bounds.size.height/3 * 2
+        
+        detailVC.preferredContentSize = CGSize.init(width: 0, height: previewH)
+        
+        previewingContext.sourceRect = cell.frame
+        print(cell.frame)
+        return detailVC
+    }
+    
+    //shows final vc
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
 
 }

@@ -93,17 +93,36 @@
         <!--Detail View Controller-->
         <scene sceneID="Hoe-cF-7Sx">
             <objects>
-                <viewController id="Ttb-7t-SpG" customClass="DetailViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="Ttb-7t-SpG" customClass="DetailViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htk-Ds-0et">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-gQ-lUS">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ttb-7t-SpG" id="ceZ-DZ-8t4"/>
+                                    <outlet property="delegate" destination="Ttb-7t-SpG" id="ysw-z6-gNG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ELF-gQ-lUS" secondAttribute="bottom" id="1N2-mW-tIa"/>
+                            <constraint firstItem="ELF-gQ-lUS" firstAttribute="trailing" secondItem="Mss-nQ-rJg" secondAttribute="trailing" id="8S6-AY-Vex"/>
+                            <constraint firstItem="ELF-gQ-lUS" firstAttribute="leading" secondItem="Mss-nQ-rJg" secondAttribute="leading" id="MNd-hC-SrM"/>
+                            <constraint firstItem="ELF-gQ-lUS" firstAttribute="top" secondItem="Mss-nQ-rJg" secondAttribute="top" id="Sto-Jl-6L6"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mss-nQ-rJg"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="ELF-gQ-lUS" id="90P-Hh-gpb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WMs-jy-g3m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2356" y="129"/>
+            <point key="canvasLocation" x="2356" y="128.57142857142858"/>
         </scene>
     </scenes>
 </document>
