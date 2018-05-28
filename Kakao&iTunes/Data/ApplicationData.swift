@@ -16,6 +16,11 @@ class ApplicationData: NSObject {
     var appLink:String? = ""
     var appImageUrlStr:String? = ""
     
+    ///셀 확장표기시 기억값.
+    var isExpandMode = false
+    ///랭크. 받아온 순서대로.
+    var rank:String = "0"
+    
     class func createApplicationData(entryDic:NSDictionary) -> ApplicationData
     {
         let data:ApplicationData = ApplicationData.init()

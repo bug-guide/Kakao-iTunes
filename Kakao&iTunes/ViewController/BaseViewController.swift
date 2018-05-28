@@ -9,8 +9,41 @@
 import UIKit
 import SwiftSpinner
 
+
+extension String {
+    
+    /**
+     가로가 정해진 상태에서의 세로 높이.
+     - Parameter width : 텍스트가 표기될 가로 크기
+     - Parameter font : 사용된 폰트
+     - Returns: 세로높이
+     */
+    func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return ceil(boundingBox.height)
+    }
+    
+    /**
+     세로가 정해진 상태에서의 가로 길이
+     - Parameter height : 텍스트가 표기될 세로 크기
+     - Parameter font : 사용된 폰트
+     - Returns: 가로 길이
+     */
+    func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
+        let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        
+        return ceil(boundingBox.width)
+    }
+}
+
+
 class BaseViewController: UIViewController, NetworkPopupDelegate {
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
