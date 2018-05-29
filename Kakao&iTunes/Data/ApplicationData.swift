@@ -9,6 +9,7 @@
 import UIKit
 
 class ApplicationData: NSObject {
+    var appId:String? = ""
     var appName:String? = ""
     var appTitle:String? = ""
     var appRights:String? = ""
@@ -24,6 +25,12 @@ class ApplicationData: NSObject {
     class func createApplicationData(entryDic:NSDictionary) -> ApplicationData
     {
         let data:ApplicationData = ApplicationData.init()
+        
+        if let idDic = entryDic["id"] as? NSDictionary {
+            if let attributes = idDic["attributes"] as? NSDictionary {
+                data.appId = attributes["im:id"] as? String
+            }
+        }
         
         if let imName = entryDic["im:name"] as? NSDictionary {
             data.appName = imName["label"] as? String

@@ -9,5 +9,7 @@ target 'Kakao&iTunes' do
 
 	pod "ChameleonFramework"
 	pod "SwiftSpinner"
-
+    pod "Cosmos"
+    pod "SnapKit"
+    
 end

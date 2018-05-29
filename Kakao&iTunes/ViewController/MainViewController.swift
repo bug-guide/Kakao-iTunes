@@ -110,6 +110,8 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let previewH = UIScreen.main.bounds.size.height/3 * 2
         
+        let applicationData = arrApplicationData![indexPath.row]
+        detailVC.applicationData = applicationData
         detailVC.preferredContentSize = CGSize.init(width: 0, height: previewH)
         
         previewingContext.sourceRect = cell.frame

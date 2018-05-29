@@ -94,7 +94,7 @@ class AppDataManager: NSObject {
         task.resume()
     }
     
-    func requestLookup(_ appId:String)
+    func requestLookup(_ appId:String, complete:@escaping (_ isSuccess:Bool, _ result:NSDictionary?)->Void)
     {
         URL_LOOKUP_APPID = appId
         let urlStr = SCHMA + HOST + URL_LOOKUP_APP
@@ -104,18 +104,31 @@ class AppDataManager: NSObject {
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
+            var isSuccess:Bool = false
+            var result:NSDictionary? = nil
+            
             guard let httpRes = response as? HTTPURLResponse, httpRes.statusCode == 200 else {
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
                 return
             }
             
             if let error = error {
                 print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
                 return
             }
             
             do {
                 if let jsonDic = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
-                    print(jsonDic)
+                    //print(jsonDic)
+                    if let results = jsonDic["results"] as? Array<Any>, results.count != 0 {
+                        isSuccess = true
+                        result = results.last as? NSDictionary
+                    }
                     
                 }
             } catch {
@@ -126,7 +139,8 @@ class AppDataManager: NSObject {
             
             // 메일 쓰레드에서 화면 갱신
             DispatchQueue.main.async {
-                
+                complete(isSuccess, result)
+                return
             }
         }
         

@@ -28,6 +28,13 @@
 		C487E99120BBE32200469AC4 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E99020BBE32200469AC4 /* DetailCell.swift */; };
 		C487E99820BBE8E000469AC4 /* HeadInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C487E99620BBE8E000469AC4 /* HeadInfoCell.swift */; };
 		C487E99920BBE8E000469AC4 /* HeadInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */; };
+		C4DAA78920BCE41B00082E90 /* LookUpData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAA78820BCE41B00082E90 /* LookUpData.swift */; };
+		C4DAA79120BCFF1800082E90 /* ReleaseNotesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAA78F20BCFF1800082E90 /* ReleaseNotesCell.swift */; };
+		C4DAA79220BCFF1800082E90 /* ReleaseNotesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DAA79020BCFF1800082E90 /* ReleaseNotesCell.xib */; };
+		C4DAA79520BD285A00082E90 /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAA79320BD285A00082E90 /* PreviewCell.swift */; };
+		C4DAA79620BD285A00082E90 /* PreviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DAA79420BD285A00082E90 /* PreviewCell.xib */; };
+		C4DAA79920BD3CEB00082E90 /* DescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DAA79720BD3CEB00082E90 /* DescriptionCell.swift */; };
+		C4DAA79A20BD3CEB00082E90 /* DescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4DAA79820BD3CEB00082E90 /* DescriptionCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +63,13 @@
 		C487E99020BBE32200469AC4 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		C487E99620BBE8E000469AC4 /* HeadInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadInfoCell.swift; sourceTree = "<group>"; };
 		C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadInfoCell.xib; sourceTree = "<group>"; };
+		C4DAA78820BCE41B00082E90 /* LookUpData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookUpData.swift; sourceTree = "<group>"; };
+		C4DAA78F20BCFF1800082E90 /* ReleaseNotesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleaseNotesCell.swift; sourceTree = "<group>"; };
+		C4DAA79020BCFF1800082E90 /* ReleaseNotesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReleaseNotesCell.xib; sourceTree = "<group>"; };
+		C4DAA79320BD285A00082E90 /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		C4DAA79420BD285A00082E90 /* PreviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreviewCell.xib; sourceTree = "<group>"; };
+		C4DAA79720BD3CEB00082E90 /* DescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionCell.swift; sourceTree = "<group>"; };
+		C4DAA79820BD3CEB00082E90 /* DescriptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DescriptionCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				C459640220BAB3B9005598C9 /* ApplicationData.swift */,
+				C4DAA78820BCE41B00082E90 /* LookUpData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -182,12 +197,12 @@
 		C487E98920BBE31000469AC4 /* DetailViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				C487E98A20BBE31000469AC4 /* TotalReviewCell */,
-				C487E98B20BBE31000469AC4 /* DescriptionCell */,
-				C487E98C20BBE31000469AC4 /* ReviewCell */,
-				C487E98D20BBE31000469AC4 /* historyTechCell */,
-				C487E98E20BBE31000469AC4 /* PreviewCell */,
 				C487E98F20BBE31000469AC4 /* HeadInfoCell */,
+				C4DAA78E20BCFF0B00082E90 /* ReleaseNotesCell */,
+				C487E98E20BBE31000469AC4 /* PreviewCell */,
+				C487E98B20BBE31000469AC4 /* DescriptionCell */,
+				C487E98A20BBE31000469AC4 /* TotalReviewCell */,
+				C487E98C20BBE31000469AC4 /* ReviewCell */,
 				C487E99020BBE32200469AC4 /* DetailCell.swift */,
 			);
 			path = DetailViewCell;
@@ -203,6 +218,8 @@
 		C487E98B20BBE31000469AC4 /* DescriptionCell */ = {
 			isa = PBXGroup;
 			children = (
+				C4DAA79720BD3CEB00082E90 /* DescriptionCell.swift */,
+				C4DAA79820BD3CEB00082E90 /* DescriptionCell.xib */,
 			);
 			path = DescriptionCell;
 			sourceTree = "<group>";
@@ -214,16 +231,11 @@
 			path = ReviewCell;
 			sourceTree = "<group>";
 		};
-		C487E98D20BBE31000469AC4 /* historyTechCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = historyTechCell;
-			sourceTree = "<group>";
-		};
 		C487E98E20BBE31000469AC4 /* PreviewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C4DAA79320BD285A00082E90 /* PreviewCell.swift */,
+				C4DAA79420BD285A00082E90 /* PreviewCell.xib */,
 			);
 			path = PreviewCell;
 			sourceTree = "<group>";
@@ -235,6 +247,15 @@
 				C487E99720BBE8E000469AC4 /* HeadInfoCell.xib */,
 			);
 			path = HeadInfoCell;
+			sourceTree = "<group>";
+		};
+		C4DAA78E20BCFF0B00082E90 /* ReleaseNotesCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4DAA78F20BCFF1800082E90 /* ReleaseNotesCell.swift */,
+				C4DAA79020BCFF1800082E90 /* ReleaseNotesCell.xib */,
+			);
+			path = ReleaseNotesCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +320,9 @@
 			files = (
 				C433517B20B79E7500B32EB1 /* LaunchScreen.storyboard in Resources */,
 				C433517820B79E7500B32EB1 /* Assets.xcassets in Resources */,
+				C4DAA79620BD285A00082E90 /* PreviewCell.xib in Resources */,
+				C4DAA79220BCFF1800082E90 /* ReleaseNotesCell.xib in Resources */,
+				C4DAA79A20BD3CEB00082E90 /* DescriptionCell.xib in Resources */,
 				C433517320B79E7400B32EB1 /* Main.storyboard in Resources */,
 				C487E98620BB8F7600469AC4 /* ExpandableCell.xib in Resources */,
 				C433518E20B7DC2F00B32EB1 /* NetworkPopup.xib in Resources */,
@@ -318,12 +342,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Kakao&iTunes/Pods-Kakao&iTunes-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSpinner/SwiftSpinner.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSpinner.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,14 +384,18 @@
 			files = (
 				C459640320BAB3B9005598C9 /* ApplicationData.swift in Sources */,
 				C459640120BAA768005598C9 /* DetailViewController.swift in Sources */,
+				C4DAA79920BD3CEB00082E90 /* DescriptionCell.swift in Sources */,
+				C4DAA79520BD285A00082E90 /* PreviewCell.swift in Sources */,
 				C487E99120BBE32200469AC4 /* DetailCell.swift in Sources */,
 				C433516E20B79E7400B32EB1 /* AppDelegate.swift in Sources */,
+				C4DAA78920BCE41B00082E90 /* LookUpData.swift in Sources */,
 				C433518620B7CB5A00B32EB1 /* BaseViewController.swift in Sources */,
 				C487E98520BB8F7600469AC4 /* ExpandableCell.swift in Sources */,
 				C487E98820BBAC8000469AC4 /* UrlTagImageView.swift in Sources */,
 				C433518D20B7DC2F00B32EB1 /* NetworkPopup.swift in Sources */,
 				C433518420B7CAF200B32EB1 /* MainViewController.swift in Sources */,
 				C487E99820BBE8E000469AC4 /* HeadInfoCell.swift in Sources */,
+				C4DAA79120BCFF1800082E90 /* ReleaseNotesCell.swift in Sources */,
 				C433519420B7FF8A00B32EB1 /* ImageCacheManager.swift in Sources */,
 				C433517620B79E7400B32EB1 /* Kakao_iTunes.xcdatamodeld in Sources */,
 				C433519220B7DE3300B32EB1 /* SplashViewController.swift in Sources */,
@@ -518,7 +548,10 @@
 				DEVELOPMENT_TEAM = G3F27QB3QE;
 				INFOPLIST_FILE = "Kakao&iTunes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nomadconnection.Kakao-iTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -535,7 +568,10 @@
 				DEVELOPMENT_TEAM = G3F27QB3QE;
 				INFOPLIST_FILE = "Kakao&iTunes/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nomadconnection.Kakao-iTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
