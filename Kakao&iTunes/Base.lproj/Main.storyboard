@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,23 +16,72 @@
             <objects>
                 <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="0.50144477739726023" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VmW-Sj-xrl">
+                                <rect key="frame" x="31.5" y="171" width="312.5" height="445"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="oAN-rM-tkh">
+                                <rect key="frame" x="137.5" y="625.5" width="100" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="z5e-tT-QNF"/>
+                                </constraints>
+                                <color key="pageIndicatorTintColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pageControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kakao &amp; iTunes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kas-4y-nl5">
+                                <rect key="frame" x="84.5" y="67" width="206" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7H3-HC-PBv"/>
+                                    <constraint firstAttribute="width" constant="206" id="qin-NM-SiR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SWH-ye-ToE">
+                                <rect key="frame" x="144" y="111" width="87" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="87" id="fXB-6h-DOf"/>
+                                    <constraint firstAttribute="height" constant="30" id="fyK-w7-zos"/>
+                                </constraints>
+                                <state key="normal" title="시작하기"/>
+                                <connections>
+                                    <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xve-U1-u7a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oAN-rM-tkh" firstAttribute="top" secondItem="VmW-Sj-xrl" secondAttribute="bottom" constant="10" id="5Qf-n2-Ce5"/>
+                            <constraint firstItem="SWH-ye-ToE" firstAttribute="top" secondItem="kas-4y-nl5" secondAttribute="bottom" constant="8" id="7V8-o6-cGb"/>
+                            <constraint firstItem="SWH-ye-ToE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="89y-lD-ElI"/>
+                            <constraint firstItem="oAN-rM-tkh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HYJ-pW-Fja"/>
+                            <constraint firstItem="VmW-Sj-xrl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MFP-qs-gcp"/>
+                            <constraint firstItem="VmW-Sj-xrl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:1.2" id="MHE-kC-Djk"/>
+                            <constraint firstItem="VmW-Sj-xrl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="60" id="oSt-oP-mba"/>
+                            <constraint firstItem="kas-4y-nl5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ol4-Yl-TS2"/>
+                            <constraint firstItem="kas-4y-nl5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="47" id="vaP-Vi-EoG"/>
+                            <constraint firstItem="VmW-Sj-xrl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:1.5" id="wok-Xc-O7S"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="rLc-0j-aHp"/>
+                    <connections>
+                        <outlet property="pageControll" destination="oAN-rM-tkh" id="1RV-k2-fij"/>
+                        <outlet property="scrollView" destination="VmW-Sj-xrl" id="XtB-1j-YhB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="66" y="129"/>
+            <point key="canvasLocation" x="64.799999999999997" y="128.57142857142858"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0d1-iH-tbX">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigation" id="Bjj-ka-bSq" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="XXq-U1-eAm">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
@@ -48,7 +98,7 @@
             <objects>
                 <viewController id="t5h-6h-t96" customClass="MainViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TBR-rI-hUm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금융 인기 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mln-an-eRj">
@@ -61,14 +111,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-OJ-aUX">
-                                <rect key="frame" x="0.0" y="50" width="375" height="674"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lrJ-Wr-QwD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lrJ-Wr-QwD">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lrJ-Wr-QwD" id="0um-tB-Gn2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -108,11 +158,11 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="Ttb-7t-SpG" customClass="DetailViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htk-Ds-0et">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-gQ-lUS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>

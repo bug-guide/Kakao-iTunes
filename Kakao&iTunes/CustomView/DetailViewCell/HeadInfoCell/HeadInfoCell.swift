@@ -25,6 +25,10 @@ class HeadInfoCell: DetailCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        iconView.layer.cornerRadius = 20
+        iconView.clipsToBounds = true
+        iconView.layer.borderWidth = 0.3
+        iconView.layer.borderColor = UIColor.flatGray().cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

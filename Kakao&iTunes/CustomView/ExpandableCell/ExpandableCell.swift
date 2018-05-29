@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 protocol ExpandableCellProtocol {
     func detailAction(indexPath:IndexPath)
@@ -39,6 +40,8 @@ class ExpandableCell: UITableViewCell {
         
         iconView.layer.cornerRadius = 10
         iconView.clipsToBounds = true
+        iconView.layer.borderWidth = 0.3
+        iconView.layer.borderColor = UIColor.flatGray().cgColor
         
         descriptionInnerView.layer.cornerRadius = 5
         descriptionInnerView.clipsToBounds = true

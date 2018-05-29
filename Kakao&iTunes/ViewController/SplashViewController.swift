@@ -7,23 +7,26 @@
 //
 
 import UIKit
+import SnapKit
 
-class SplashViewController: BaseViewController {
+class SplashViewController: BaseViewController, UIScrollViewDelegate {
     
-//    @IBOutlet weak var testImageView: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var pageControll: UIPageControl!
+    
+    var childLinear:UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setGuideImageView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.checkNetwork()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,15 +42,58 @@ class SplashViewController: BaseViewController {
         appdelegate.changeRootViewController(rootView: .Main)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func startAction(_ sender: Any) {
+        self.checkNetwork()
     }
-    */
+    
+    func setGuideImageView() {
+        
+        scrollView.delegate = self
+        
+        if childLinear != nil{
+            childLinear?.removeFromSuperview()
+            childLinear = nil
+        }
+        
+        childLinear = UIView.init(frame: CGRect.init(x: 0, y: 0, width: 10, height: scrollView.frame.size.width))
+        scrollView.addSubview(self.childLinear!)
+        //        scrollView.delegate = self
+        //childLinear!.backgroundColor = UIColor.flatRed()
+        
+        var lastX:CGFloat = 0.0
+        let padding:CGFloat = 0
+        let ivH = scrollView!.frame.size.height
+        let ivW = scrollView!.frame.size.width
+        
+        for index in 1..<5 {
+            
+            let imageView = UIImageView.init(frame: CGRect.init(x: lastX, y: 0, width: ivW, height: ivH))
+            imageView.contentMode = .scaleAspectFit
+            let imageName = "guide_0\(index)"
+            imageView.image = UIImage.init(named: imageName)
+            
+            childLinear?.addSubview(imageView)
+            imageView.snp.makeConstraints { (make) in
+                
+                let centerStart = self.scrollView.frame.size.width/2
+                let centerX = centerStart+(self.scrollView.frame.size.width*CGFloat(index-1))
+                
+                make.height.equalTo(self.scrollView)
+                make.centerY.equalTo(self.scrollView)
+                make.centerX.equalTo(centerX)
+            }
+            lastX = lastX + ivW + padding
+        }
+        
+        scrollView.contentSize = CGSize.init(width: lastX, height: 300)
+        
+        pageControll.numberOfPages = 4
+        
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let pageNum = scrollView.contentOffset.x / scrollView.frame.size.width
+        pageControll.currentPage = Int(pageNum)
+    }
 
 }
