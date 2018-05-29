@@ -42,11 +42,12 @@ extension String {
 
 class BaseViewController: UIViewController, NetworkPopupDelegate {
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //네비게이션 바 하단라인 없애기
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
     }
 
     override func didReceiveMemoryWarning() {

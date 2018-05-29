@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol ExpandableCellProtocol {
+    func detailAction(indexPath:IndexPath)
+}
+
 class ExpandableCell: UITableViewCell {
 
     //셀 확장 전 크기값. xib와 일치시켜야한다. 계산값의 기본값으로 사용된다.
     public static let CellCloseH:CGFloat = 80
-    
+    var indexPath:IndexPath?
+    var delegate:ExpandableCellProtocol?
     
     @IBOutlet weak var iconView: UrlTagImageView!
     
@@ -24,6 +29,7 @@ class ExpandableCell: UITableViewCell {
     
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var rankW: NSLayoutConstraint!
+    
     
     
     override func awakeFromNib() {
@@ -44,7 +50,9 @@ class ExpandableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellData(data:ApplicationData) {
+    func setCellData(data:ApplicationData, indexPath:IndexPath) {
+        
+        self.indexPath = indexPath
         
         //재활용시 이미지가 복수 로딩되는것을 막아야한다.
         //마지막에 로딩을 주문한 녀석을 찾기위해 뷰 자체에 직접 태그를 건다.
@@ -86,4 +94,11 @@ class ExpandableCell: UITableViewCell {
         let cellH = descriptionH + 40 + ExpandableCell.CellCloseH + 10
         return cellH
     }
+    
+    @IBAction func detailAction(_ sender: Any) {
+        if let delegate = delegate {
+            delegate.detailAction(indexPath: self.indexPath!)
+        }
+    }
+    
 }

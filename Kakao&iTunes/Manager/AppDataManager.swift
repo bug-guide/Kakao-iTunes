@@ -31,12 +31,18 @@ class AppDataManager: NSObject {
     let SCHMA:String = "https://"
     let HOST:String = "itunes.apple.com"
     let URL_TOP_FREE:String = "/kr/rss/topfreeapplications/limit=50/genre=6015/json"
-    var URL_LOOKUP_APPID:String = ""
+    var URL_APPID:String = ""
     var URL_LOOKUP_APP:String {
         get {
-            return "/lookup?id=\(URL_LOOKUP_APPID)&country=kr"
+            return "/lookup?id=\(URL_APPID)&country=kr"
         }
     }
+    var URL_REVIEW_APP:String {
+        get {
+            return "/kr/rss/customerreviews/id=\(URL_APPID)/sortBy=mostRecent/json"
+        }
+    }
+    
     
     func requestTopFreeApp(complete:@escaping (_ isSuccess:Bool, _ entryData:Array<Any>?)->Void)
     {
@@ -96,7 +102,7 @@ class AppDataManager: NSObject {
     
     func requestLookup(_ appId:String, complete:@escaping (_ isSuccess:Bool, _ result:NSDictionary?)->Void)
     {
-        URL_LOOKUP_APPID = appId
+        URL_APPID = appId
         let urlStr = SCHMA + HOST + URL_LOOKUP_APP
         guard let url = URL.init(string: urlStr) else {
             return
@@ -140,6 +146,70 @@ class AppDataManager: NSObject {
             // 메일 쓰레드에서 화면 갱신
             DispatchQueue.main.async {
                 complete(isSuccess, result)
+                return
+            }
+        }
+        
+        task.resume()
+    }
+    
+    func requestReviews(_ appId:String, complete:@escaping (_ isSuccess:Bool, _ reviewDatas:Array<ReviewData>?)->Void) {
+        
+        let urlStr = SCHMA + HOST + URL_REVIEW_APP
+        guard let url = URL.init(string: urlStr) else {
+            complete(false, nil)
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            var isSuccess:Bool = false
+            var reviewDatas:Array<ReviewData>? = nil
+            
+            guard let httpRes = response as? HTTPURLResponse, httpRes.statusCode == 200 else {
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
+                return
+            }
+            
+            if let error = error {
+                print(error.localizedDescription)
+                DispatchQueue.main.async {
+                    complete(false, nil)
+                }
+                return
+            }
+            
+            do {
+                if let jsonDic = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? [String: AnyObject] {
+                    //print(jsonDic)
+                    isSuccess = true
+                    
+                    
+                    if let feed = jsonDic["feed"] {
+                        if var entry = feed["entry"] as? Array<Any> {
+                            //0번은 앱정보. 중복.
+                            //1~n개 까지가 리뷰정보.
+                            entry.remove(at: 0)
+                            reviewDatas = []
+                            for eData in entry {
+                                let reviewData = ReviewData.createReviewData(reviewDic: eData as! NSDictionary)
+                                reviewDatas?.append(reviewData)
+                            }
+                        }
+                    }
+                }
+            } catch {
+                print("JSON 파상 에러")
+                isSuccess = false
+            }
+            
+            print("JSON 파싱 완료")
+            
+            // 메일 쓰레드에서 화면 갱신
+            DispatchQueue.main.async {
+                complete(isSuccess, reviewDatas)
                 return
             }
         }

@@ -63,7 +63,6 @@ class LookUpData: NSObject {
             data.appDescription = description
         }
         
-        
         return data
     }
 }

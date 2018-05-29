@@ -13,7 +13,7 @@
         <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SplashViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="BYZ-38-t0r" customClass="SplashViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,9 +30,10 @@
         <scene sceneID="0d1-iH-tbX">
             <objects>
                 <navigationController storyboardIdentifier="MainNavigation" id="Bjj-ka-bSq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XXq-U1-eAm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="XXq-U1-eAm">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <connections>
                         <segue destination="t5h-6h-t96" kind="relationship" relationship="rootViewController" id="ONF-Jf-Huv"/>
@@ -40,18 +41,27 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MX2-ix-Iva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="129"/>
+            <point key="canvasLocation" x="879" y="129"/>
         </scene>
-        <!--금융 인기앱-->
+        <!--Main View Controller-->
         <scene sceneID="dDw-9k-rQk">
             <objects>
                 <viewController id="t5h-6h-t96" customClass="MainViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TBR-rI-hUm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="금융 인기 앱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mln-an-eRj">
+                                <rect key="frame" x="20" y="0.0" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vuc-fT-lmp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Bbz-OJ-aUX">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="674"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lrJ-Wr-QwD">
@@ -62,7 +72,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Ttb-7t-SpG" kind="show" id="0ll-X2-YhQ"/>
+                                            <segue destination="Ttb-7t-SpG" kind="show" identifier="Detail" id="0ll-X2-YhQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -72,16 +82,19 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="trailing" secondItem="fXn-KP-MN8" secondAttribute="trailing" id="U6c-4a-qdc"/>
-                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="top" secondItem="fXn-KP-MN8" secondAttribute="top" id="Vbs-OG-M30"/>
-                            <constraint firstAttribute="bottom" secondItem="Bbz-OJ-aUX" secondAttribute="bottom" id="m9T-ym-CDf"/>
-                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="leading" secondItem="fXn-KP-MN8" secondAttribute="leading" id="xF2-mx-wwn"/>
+                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="trailing" secondItem="fXn-KP-MN8" secondAttribute="trailing" id="00l-Ij-zQv"/>
+                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="top" secondItem="Mln-an-eRj" secondAttribute="bottom" id="2HY-1Y-i6g"/>
+                            <constraint firstItem="Mln-an-eRj" firstAttribute="leading" secondItem="fXn-KP-MN8" secondAttribute="leading" constant="20" id="6mC-Mo-P4d"/>
+                            <constraint firstItem="fXn-KP-MN8" firstAttribute="trailing" secondItem="Mln-an-eRj" secondAttribute="trailing" constant="20" id="EqB-TV-uJx"/>
+                            <constraint firstItem="Bbz-OJ-aUX" firstAttribute="leading" secondItem="fXn-KP-MN8" secondAttribute="leading" id="HNe-pU-2GT"/>
+                            <constraint firstAttribute="bottom" secondItem="Bbz-OJ-aUX" secondAttribute="bottom" id="yQg-yr-Oyo"/>
+                            <constraint firstItem="Mln-an-eRj" firstAttribute="top" secondItem="fXn-KP-MN8" secondAttribute="top" id="zZt-sD-0XM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fXn-KP-MN8"/>
                     </view>
-                    <navigationItem key="navigationItem" title="금융 인기앱" id="zt7-OX-Psr"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="zt7-OX-Psr"/>
                     <connections>
                         <outlet property="tableView" destination="Bbz-OJ-aUX" id="EcK-IQ-PsF"/>
                     </connections>
@@ -95,15 +108,15 @@
             <objects>
                 <viewController storyboardIdentifier="DetailViewController" id="Ttb-7t-SpG" customClass="DetailViewController" customModule="Kakao_iTunes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="htk-Ds-0et">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-gQ-lUS">
-                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ELF-gQ-lUS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.99953407049999998" green="0.98835557699999999" blue="0.47265523669999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ELF-gQ-lUS" secondAttribute="bottom" id="1N2-mW-tIa"/>
                             <constraint firstItem="ELF-gQ-lUS" firstAttribute="trailing" secondItem="Mss-nQ-rJg" secondAttribute="trailing" id="8S6-AY-Vex"/>

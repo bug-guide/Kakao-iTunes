@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ReviewView" customModule="Kakao_iTunes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LQC-Ft-BD2">
+                    <rect key="frame" x="5" y="0.0" width="190" height="200"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpF-XW-er9">
+                            <rect key="frame" x="10" y="10" width="170" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Mpe-kt-Yub"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUq-ax-bTt">
+                            <rect key="frame" x="95" y="35" width="85" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="lGM-KM-mrU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RDP-lj-HTT" customClass="CosmosView" customModule="Cosmos">
+                            <rect key="frame" x="10" y="35" width="80" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="80" id="5ct-rj-hp1"/>
+                                <constraint firstAttribute="height" constant="20" id="Ujv-mC-yCd"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                    <real key="value" value="3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                    <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                    <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                    <color key="value" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1Y-RW-3ZI">
+                            <rect key="frame" x="10" y="60" width="170" height="20"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="4ef-xi-5MH"/>
+                                <constraint firstAttribute="height" constant="20" id="kkW-OW-izn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="d1Y-RW-3ZI" secondAttribute="trailing" constant="10" id="1FR-5X-Mth"/>
+                        <constraint firstItem="RDP-lj-HTT" firstAttribute="top" secondItem="kpF-XW-er9" secondAttribute="bottom" constant="5" id="606-hi-djy"/>
+                        <constraint firstAttribute="trailing" secondItem="kpF-XW-er9" secondAttribute="trailing" constant="10" id="HgN-gd-UIH"/>
+                        <constraint firstItem="AUq-ax-bTt" firstAttribute="leading" secondItem="RDP-lj-HTT" secondAttribute="trailing" constant="5" id="LVq-vi-Eqq"/>
+                        <constraint firstItem="AUq-ax-bTt" firstAttribute="top" secondItem="kpF-XW-er9" secondAttribute="bottom" constant="5" id="NWF-CM-pj4"/>
+                        <constraint firstAttribute="trailing" secondItem="AUq-ax-bTt" secondAttribute="trailing" constant="10" id="d2v-nL-JMQ"/>
+                        <constraint firstItem="kpF-XW-er9" firstAttribute="leading" secondItem="LQC-Ft-BD2" secondAttribute="leading" constant="10" id="ieG-0b-Mcn"/>
+                        <constraint firstItem="d1Y-RW-3ZI" firstAttribute="top" secondItem="LQC-Ft-BD2" secondAttribute="top" constant="60" id="jeb-ta-4Gk"/>
+                        <constraint firstItem="kpF-XW-er9" firstAttribute="top" secondItem="LQC-Ft-BD2" secondAttribute="top" constant="10" id="kAU-c4-Gnf"/>
+                        <constraint firstItem="RDP-lj-HTT" firstAttribute="leading" secondItem="LQC-Ft-BD2" secondAttribute="leading" constant="10" id="mTs-k0-1QA"/>
+                        <constraint firstItem="d1Y-RW-3ZI" firstAttribute="leading" secondItem="LQC-Ft-BD2" secondAttribute="leading" constant="10" id="sQQ-KI-jXz"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="LQC-Ft-BD2" secondAttribute="trailing" constant="5" id="Cn4-96-DYW"/>
+                <constraint firstItem="LQC-Ft-BD2" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Xed-po-pag"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="LQC-Ft-BD2" secondAttribute="bottom" id="ZUF-nK-TXr"/>
+                <constraint firstItem="LQC-Ft-BD2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="wQm-SZ-y4h"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentLabel" destination="d1Y-RW-3ZI" id="z9O-LJ-ywy"/>
+                <outlet property="contentLabelH" destination="kkW-OW-izn" id="zBQ-pp-9fR"/>
+                <outlet property="contentLabelW" destination="4ef-xi-5MH" id="prM-Pu-lv8"/>
+                <outlet property="innerView" destination="LQC-Ft-BD2" id="ex5-rW-1N6"/>
+                <outlet property="ratingView" destination="RDP-lj-HTT" id="cyK-Fp-8U2"/>
+                <outlet property="titleLabel" destination="kpF-XW-er9" id="IKQ-Wj-JVK"/>
+                <outlet property="userNameLabel" destination="AUq-ax-bTt" id="TEO-8s-iw2"/>
+            </connections>
+        </view>
+    </objects>
+</document>

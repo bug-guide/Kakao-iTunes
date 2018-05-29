@@ -58,7 +58,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8W-Xf-76R">
-                        <rect key="frame" x="123.5" y="10" width="186.5" height="30"/>
+                        <rect key="frame" x="123.5" y="10" width="156.5" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="ydp-v1-3WO"/>
                         </constraints>
@@ -67,7 +67,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxs-mz-Nfc">
-                        <rect key="frame" x="80" y="45" width="230" height="25"/>
+                        <rect key="frame" x="80" y="45" width="200" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="dF7-Wy-Gzm"/>
                         </constraints>
@@ -85,11 +85,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HeM-vJ-d09">
+                        <rect key="frame" x="280" y="25" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="mOz-Yc-7go"/>
+                        </constraints>
+                        <state key="normal" image="ic_right_arrow"/>
+                        <connections>
+                            <action selector="detailAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="63j-tM-lhr"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="H8W-Xf-76R" secondAttribute="trailing" constant="10" id="Aky-bE-war"/>
+                    <constraint firstItem="HeM-vJ-d09" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="25" id="1WQ-qx-ID1"/>
+                    <constraint firstAttribute="trailing" secondItem="H8W-Xf-76R" secondAttribute="trailing" constant="40" id="Aky-bE-war"/>
                     <constraint firstItem="xa9-Mk-LP7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Bix-ss-4yr"/>
-                    <constraint firstAttribute="trailing" secondItem="fxs-mz-Nfc" secondAttribute="trailing" constant="10" id="CLh-As-FBm"/>
+                    <constraint firstAttribute="trailing" secondItem="fxs-mz-Nfc" secondAttribute="trailing" constant="40" id="CLh-As-FBm"/>
                     <constraint firstItem="7jA-QL-KKa" firstAttribute="leading" secondItem="xa9-Mk-LP7" secondAttribute="trailing" constant="10" id="DbG-bG-ymv"/>
                     <constraint firstItem="H8W-Xf-76R" firstAttribute="leading" secondItem="7jA-QL-KKa" secondAttribute="trailing" constant="10" id="KWr-Lq-nDX"/>
                     <constraint firstAttribute="trailing" secondItem="V6H-U9-Hcw" secondAttribute="trailing" id="MYl-Kd-EDw"/>
@@ -97,6 +108,8 @@
                     <constraint firstItem="H8W-Xf-76R" firstAttribute="leading" secondItem="7jA-QL-KKa" secondAttribute="trailing" constant="10" id="Mvu-4F-ztU"/>
                     <constraint firstItem="7jA-QL-KKa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="OL6-fR-G1J"/>
                     <constraint firstItem="H8W-Xf-76R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Rnz-9n-9BB"/>
+                    <constraint firstItem="V6H-U9-Hcw" firstAttribute="top" secondItem="HeM-vJ-d09" secondAttribute="bottom" constant="25" id="SU6-8v-IJe"/>
+                    <constraint firstAttribute="trailing" secondItem="HeM-vJ-d09" secondAttribute="trailing" constant="10" id="So4-Vg-eNZ"/>
                     <constraint firstItem="V6H-U9-Hcw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="80" id="cZL-oj-SjQ"/>
                     <constraint firstItem="fxs-mz-Nfc" firstAttribute="leading" secondItem="xa9-Mk-LP7" secondAttribute="trailing" constant="10" id="hmL-VS-5mP"/>
                     <constraint firstAttribute="bottom" secondItem="V6H-U9-Hcw" secondAttribute="bottom" constant="0.5" id="jaI-Ir-hWh"/>
@@ -117,4 +130,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_right_arrow" width="64" height="64"/>
+    </resources>
 </document>

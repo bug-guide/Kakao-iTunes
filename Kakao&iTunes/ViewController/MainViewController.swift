@@ -9,16 +9,23 @@
 import UIKit
 import SwiftSpinner
 
-class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, ExpandableCellProtocol {
     
     @IBOutlet weak var tableView: UITableView!
     
-
+    
     var arrApplicationData:Array<ApplicationData>? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //reload
+        let reload = UIBarButtonItem(title: "Reload", style: .done, target: self, action: #selector(dataReload))
+        let guide = UIBarButtonItem(title: "Guide", style: .done, target: self, action: #selector(guideAction))
         
+        self.navigationItem.leftBarButtonItem = guide
+        self.navigationItem.rightBarButtonItem = reload
+        
+
         //expandablecell load
         let eCell = UINib.init(nibName: "ExpandableCell", bundle: nil)
         tableView.register(eCell, forCellReuseIdentifier: "ExpandableCell")
@@ -28,9 +35,28 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
             registerForPreviewing(with: self, sourceView: tableView)
         }
         
+        self.dataReload()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func guideAction() {
+        let app = UIApplication.shared.delegate as! AppDelegate
+        app.changeRootViewController(rootView: .Splash)
+    }
+    
+    @objc func dataReload() {
         SwiftSpinner.show("TopFreeApp")
         AppDataManager.shared.requestTopFreeApp { (isSuccess, entryData) in
             if isSuccess {
+                
+                if self.arrApplicationData != nil
+                {
+                    self.arrApplicationData?.removeAll()
+                }
                 
                 if entryData?.count != 0 {
                     for entry in entryData! {
@@ -42,15 +68,8 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     print("end")
                 }
             }
-            
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - table
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (arrApplicationData?.count)!
@@ -73,6 +92,16 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
     }
     
+    /*
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView.init(frame: CGRect.init(x: 0, y: 0, width: 300, height: 100))
+    }
+    */
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ExpandableCell") as? ExpandableCell else {
@@ -81,8 +110,8 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let data:ApplicationData = arrApplicationData![indexPath.row]
         data.rank = String(indexPath.row + 1)
-        cell.setCellData(data: data)
-        
+        cell.setCellData(data: data, indexPath: indexPath)
+        cell.delegate = self
         return cell
     }
     
@@ -124,5 +153,11 @@ class MainViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         show(viewControllerToCommit, sender: self)
     }
 
+    func detailAction(indexPath: IndexPath) {
+        let applicationData = arrApplicationData![indexPath.row]
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.applicationData = applicationData
+        self.navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
