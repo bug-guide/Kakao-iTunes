@@ -11,6 +11,7 @@ import SnapKit
 
 class SplashViewController: BaseViewController, UIScrollViewDelegate {
     
+    @IBOutlet weak var backImageView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControll: UIPageControl!
     
@@ -18,6 +19,11 @@ class SplashViewController: BaseViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
+            self.backImageView.alpha = 0.6
+        }) { (isComplete) in }
+        
         self.setGuideImageView()
     }
     
@@ -86,7 +92,6 @@ class SplashViewController: BaseViewController, UIScrollViewDelegate {
         }
         
         scrollView.contentSize = CGSize.init(width: lastX, height: 300)
-        
         pageControll.numberOfPages = 4
         
     }

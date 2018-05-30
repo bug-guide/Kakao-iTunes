@@ -90,7 +90,8 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="mOz-Yc-7go"/>
                         </constraints>
-                        <state key="normal" image="ic_right_arrow"/>
+                        <state key="normal" image="ic_right_arrow_b"/>
+                        <state key="highlighted" image="ic_right_arrow_g"/>
                         <connections>
                             <action selector="detailAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="63j-tM-lhr"/>
                         </connections>
@@ -131,6 +132,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="ic_right_arrow" width="64" height="64"/>
+        <image name="ic_right_arrow_b" width="64" height="64"/>
+        <image name="ic_right_arrow_g" width="64" height="64"/>
     </resources>
 </document>

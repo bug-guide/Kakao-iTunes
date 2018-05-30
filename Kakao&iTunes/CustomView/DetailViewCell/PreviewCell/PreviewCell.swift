@@ -57,7 +57,7 @@ class PreviewCell: DetailCell {
             lastX = lastX + ivW + padding
         }
         
-        previewScroll.contentSize = CGSize.init(width: (lastX-ivW-padding), height: previewScroll.frame.size.height)
+        previewScroll.contentSize = CGSize.init(width: lastX, height: previewScroll.frame.size.height)
     }
     
 }
