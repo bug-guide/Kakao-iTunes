@@ -1,0 +1,6 @@
+framework module Pods_Kakao_iTunes {
+  umbrella header "Pods-Kakao&iTunes-umbrella.h"
+
+  export *
+  module * { export * }
+}

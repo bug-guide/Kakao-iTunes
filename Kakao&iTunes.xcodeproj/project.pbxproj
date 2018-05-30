@@ -212,18 +212,10 @@
 				C4DAA78E20BCFF0B00082E90 /* ReleaseNotesCell */,
 				C487E98E20BBE31000469AC4 /* PreviewCell */,
 				C487E98B20BBE31000469AC4 /* DescriptionCell */,
-				C487E98A20BBE31000469AC4 /* TotalReviewCell */,
 				C487E98C20BBE31000469AC4 /* ReviewCell */,
 				C487E99020BBE32200469AC4 /* DetailCell.swift */,
 			);
 			path = DetailViewCell;
-			sourceTree = "<group>";
-		};
-		C487E98A20BBE31000469AC4 /* TotalReviewCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TotalReviewCell;
 			sourceTree = "<group>";
 		};
 		C487E98B20BBE31000469AC4 /* DescriptionCell */ = {

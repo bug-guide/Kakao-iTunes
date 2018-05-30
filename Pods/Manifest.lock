@@ -1,0 +1,30 @@
+PODS:
+  - ChameleonFramework (2.1.0):
+    - ChameleonFramework/Default (= 2.1.0)
+  - ChameleonFramework/Default (2.1.0)
+  - Cosmos (16.0.0)
+  - SnapKit (4.0.0)
+  - SwiftSpinner (1.5.0)
+
+DEPENDENCIES:
+  - ChameleonFramework
+  - Cosmos
+  - SnapKit
+  - SwiftSpinner
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ChameleonFramework
+    - Cosmos
+    - SnapKit
+    - SwiftSpinner
+
+SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Cosmos: 7bcee0fa858a9355a214f2a181be5dffcee42c81
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftSpinner: 4c058c7a1d6b444dd2e1d70988ead40783097133
+
+PODFILE CHECKSUM: 2a452d2764397c599a7dce6915462b6bc255687b
+
+COCOAPODS: 1.5.3
